@@ -6,12 +6,14 @@ $mountain-light: #213949
 $mountain-dark: #1e303c
 $mountain-height: 260px
 $mountain-width: 200px
+$bush: #17242c
 $tree-top-dark: #22606f
 $tree-top-light: #2c7a88
 $tree-trunk: #403e3b
 $tree-height: 60px
 $trunk-height: 35px
 $tree-width: 40px
+$moon: #ebc75b
 $box-radius: 20px
     
 .container
@@ -30,8 +32,14 @@ $box-radius: 20px
     position: relative
     overflow: hidden
 
-// .mountain:nth-child(1)
-//     left: 50px
+.moon
+    position: absolute
+    background-color: $moon
+    height: 80px
+    width: 80px
+    top: 50px
+    left: 50px
+    border-radius: 50%
 
 .mountain
     position: absolute
@@ -56,19 +64,54 @@ $box-radius: 20px
     border-bottom: calc(#{$mountain-height} - 60px) solid $mountain-light
     border-right: calc(#{$mountain-width} - 60px) solid transparent
     border-left: 0 solid transparent
-    right: -20px
+    right: 10px
 
 .mountain-left
     border-bottom: $mountain-height solid $mountain-dark
     border-left: $mountain-width solid transparent
     border-right: 0 solid transparent
-    right: calc(#{$mountain-width} - 80px)
+    right: calc(#{$mountain-width} - 50px)
 
 .mountain-right
     border-bottom: $mountain-height solid $mountain-light
     border-right: $mountain-width solid transparent
     border-left: 0 solid transparent
-    right: -80px
+    right: -50px
+
+.bush
+    position: absolute
+    bottom: $ground-height
+    height: 40px
+    width: 170px
+    background-color: $bush
+    border-radius: 45px 45px 0px 0px
+    left: -20px
+
+.bush:nth-child(2)
+    left: 130px
+
+.bush:nth-child(3)
+    left: 280px
+
+.bush:nth-child(4)
+    left: 430px
+
+.bush:before,
+.bush:after
+    content: ""
+    display: block
+    position: absolute
+    background-color: $bush
+    border-radius: 50%
+    bottom: 0
+    width: 60px
+    height: 52px
+
+.bush:before
+    left: 35px
+
+.bush:after
+    right: 35px
 
 .tree
     position: absolute

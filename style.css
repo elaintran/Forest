@@ -14,6 +14,15 @@
   position: relative;
   overflow: hidden; }
 
+.moon {
+  position: absolute;
+  background-color: #ebc75b;
+  height: 80px;
+  width: 80px;
+  top: 50px;
+  left: 50px;
+  border-radius: 50%; }
+
 .mountain {
   position: absolute;
   bottom: 0; }
@@ -37,19 +46,54 @@
   border-bottom: calc(260px - 60px) solid #213949;
   border-right: calc(200px - 60px) solid transparent;
   border-left: 0 solid transparent;
-  right: -20px; }
+  right: 10px; }
 
 .mountain-left {
   border-bottom: 260px solid #1e303c;
   border-left: 200px solid transparent;
   border-right: 0 solid transparent;
-  right: calc(200px - 80px); }
+  right: calc(200px - 50px); }
 
 .mountain-right {
   border-bottom: 260px solid #213949;
   border-right: 200px solid transparent;
   border-left: 0 solid transparent;
-  right: -80px; }
+  right: -50px; }
+
+.bush {
+  position: absolute;
+  bottom: 120px;
+  height: 40px;
+  width: 170px;
+  background-color: #17242c;
+  border-radius: 45px 45px 0px 0px;
+  left: -20px; }
+
+.bush:nth-child(2) {
+  left: 130px; }
+
+.bush:nth-child(3) {
+  left: 280px; }
+
+.bush:nth-child(4) {
+  left: 430px; }
+
+.bush:before,
+.bush:after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #17242c;
+  border-radius: 50%;
+  bottom: 0;
+  width: 60px;
+  height: 52px; }
+
+.bush:before {
+  left: 35px; }
+
+.bush:after {
+  right: 35px; }
 
 .tree {
   position: absolute;
