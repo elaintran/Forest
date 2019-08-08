@@ -1,0 +1,150 @@
+$background: #dae3e2
+$sky: #2f4f64
+$ground: #286979
+$ground-height: 120px
+$mountain-light: #213949
+$mountain-dark: #1e303c
+$mountain-height: 260px
+$mountain-width: 200px
+$tree-top-dark: #22606f
+$tree-top-light: #2c7a88
+$tree-trunk: #403e3b
+$tree-height: 60px
+$trunk-height: 35px
+$tree-width: 40px
+$box-radius: 20px
+    
+.container
+    width: 100%
+    height: 100vh
+    display: flex
+    align-items: center
+    justify-content: center
+    background-color: $background
+
+.box
+    background-color: $sky
+    width: 500px
+    height: 500px
+    border-radius: $box-radius
+    position: relative
+    overflow: hidden
+
+// .mountain:nth-child(1)
+//     left: 50px
+
+.mountain
+    position: absolute
+    bottom: 0
+
+.mountain:nth-child(1)
+    right: 0
+
+.mountain:nth-child(2)
+    right: 200px
+
+.mountain-left, .mountain-right
+    position: absolute
+    bottom: $ground-height
+
+.mountain:nth-child(2) .mountain-left
+    border-bottom: calc(#{$mountain-height} - 60px) solid $mountain-dark
+    border-left: calc(#{$mountain-width} - 60px) solid transparent
+    border-right: 0 solid transparent
+
+.mountain:nth-child(2) .mountain-right
+    border-bottom: calc(#{$mountain-height} - 60px) solid $mountain-light
+    border-right: calc(#{$mountain-width} - 60px) solid transparent
+    border-left: 0 solid transparent
+    right: -20px
+
+.mountain-left
+    border-bottom: $mountain-height solid $mountain-dark
+    border-left: $mountain-width solid transparent
+    border-right: 0 solid transparent
+    right: calc(#{$mountain-width} - 80px)
+
+.mountain-right
+    border-bottom: $mountain-height solid $mountain-light
+    border-right: $mountain-width solid transparent
+    border-left: 0 solid transparent
+    right: -80px
+
+.tree
+    position: absolute
+    bottom: 0
+
+.tree:nth-child(1)
+    left: 9px
+
+.tree:nth-child(2)
+    left: 109px
+
+.tree:nth-child(3)
+    left: 209px
+
+.tree:nth-child(4)
+    left: 309px
+
+.tree:nth-child(5)
+    left: 409px
+
+.tree-top-left, .tree-top-right
+    position: absolute
+
+.tree-top-left:nth-child(1), .tree-top-right:nth-child(1)
+    bottom: calc(#{$ground-height} + #{$trunk-height})
+
+.tree-top-left:nth-child(1)
+    border-left: $tree-width solid transparent
+
+.tree-top-left:nth-child(1)
+    border-right: $tree-width solid transparent
+
+.tree-top-left:nth-child(2), .tree-top-right:nth-child(2)
+    bottom: calc(#{$ground-height} + #{$trunk-height} + 35px)
+
+.tree-top-left:nth-child(2)
+    border-left: calc(#{$tree-width} - 5px) solid transparent
+    left: 5px
+
+.tree-top-right:nth-child(2)
+    border-right: calc(#{$tree-width} - 5px) solid transparent
+
+.tree-top-left:nth-child(3), .tree-top-right:nth-child(3)
+    bottom: calc(#{$ground-height} + #{$trunk-height} + 70px)
+
+.tree-top-left:nth-child(3)
+    border-left: calc(#{$tree-width} - 10px) solid transparent
+    left: 10px
+
+.tree-top-right:nth-child(3)
+    border-right: calc(#{$tree-width} - 10px) solid transparent
+
+.tree-top-left
+    border-bottom: $tree-height solid $tree-top-dark
+    border-right: 0 solid transparent
+    border-left: $tree-width solid transparent
+
+.tree-top-right
+    left: $tree-width
+    border-bottom: $tree-height solid $tree-top-light
+    border-right: $tree-width solid transparent
+    border-left: 0 solid transparent
+
+.tree-trunk
+    position: absolute
+    height: $trunk-height
+    left: calc(#{$tree-width} - #{$tree-width/6})
+    width: calc( #{$tree-width/3})
+    bottom: $ground-height
+    background-color: $tree-trunk
+
+.ground
+    position: absolute
+    left: 0
+    right: 0
+    bottom: 0
+    height: $ground-height
+    background-color: $ground
+    border-radius: 0 0 $box-radius $box-radius
